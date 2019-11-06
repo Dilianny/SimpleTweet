@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+  import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -78,11 +78,15 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             //tweetLayout = itemView.findViewById(R.id.rlTweet);
         }
 
+
         public void bind(Tweet tweet) {
-            tvBody.setText(tweet.getBody());
-            tvScreenName.setText((tweet.getUser().getScreenName()));
+            //tvBody.setText(tweet.getBody());
+            tvBody.setText(tweet.body);
+            tvScreenName.setText(tweet.user.screenName);
+            Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
+            //tvScreenName.setText((tweet.getUser().getScreenName()));
           //  tvName.setText("@"+(tweet.getUser().getName()));
-            Glide.with(context).load(tweet.getUser().getPublicImageUrl()).into(ivProfileImage);
+            //Glide.with(context).load(tweet.getUser().getPublicImageUrl()).into(ivProfileImage);
             //tvDate.setText(tweet.getFormattedTimestamp());
             //tweetLayout.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT));
 

@@ -14,34 +14,27 @@ public class Tweet {
     public String createdAt;
     public long id;
     public User user;
-//    public int numRetweets;
-   // public int numFavorites;
 
+    public Tweet() {}
 
-    public static Tweet fromJson(JSONObject jsonTweet) throws JSONException {
+    public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
         Tweet tweet = new Tweet();
-        tweet.body = jsonTweet.getString("text");
-        tweet.createdAt = jsonTweet.getString("created_at");
-        tweet.user = User.fromJson(jsonTweet.getJSONObject("user"));
-        tweet.id = jsonTweet.getLong("id");
-     //   tweet.numFavorites = jsonTweet.getInt("favorite_count");
-       // tweet.numRetweets = jsonTweet.getInt("retweet_count");
+        tweet.body = jsonObject.getString("text");
+        tweet.createdAt = jsonObject.getString("created_at");
+        tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
+        tweet.id = jsonObject.getLong("id");
         return tweet;
     }
 
     public static List<Tweet> fromJsonArray(JSONArray jsonArray) throws JSONException {
-        List<Tweet> tweets = new ArrayList<Tweet>();
+        List<Tweet> tweets = new ArrayList<>();
         for (int i = 0; i < jsonArray.length(); i++){
             tweets.add(fromJson(jsonArray.getJSONObject(i)));
         }
         return tweets;
     }
 
-   /* public String getFormattedTimestamp(){
-        return TimeFormatter.getTimeDifference(createdAt);
-    }*/
-
-    public String getBody() {
+   /* public String getBody() {
         return body;
     }
 
@@ -55,13 +48,5 @@ public class Tweet {
 
     public Long getId() {
         return id;
-    }
-
-  /*  public int getNumRetweets() {
-        return numRetweets;
-    }
-
-    public int getNumFavorites() {
-        return numFavorites;
-    }*/
+    } */
 }

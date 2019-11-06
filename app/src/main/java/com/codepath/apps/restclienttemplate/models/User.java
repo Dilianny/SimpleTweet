@@ -7,17 +7,17 @@ import org.json.JSONObject;
 
         public String name;
         public String screenName;
-        public String publicImageUrl;
+        public String profileImageUrl;
 
-        public static User fromJson (JSONObject jsonUser) throws JSONException {
+        public static User fromJson (JSONObject jsonObject) throws JSONException {
             User user = new User();
-            user.name = jsonUser.getString("name");
-            user.screenName = jsonUser.getString("screen_name");
-            user.publicImageUrl = jsonUser.getString("profile_image_url_https");
+            user.name = jsonObject.getString("name");
+            user.screenName = jsonObject.getString("screen_name");
+            user.profileImageUrl = jsonObject .getString("profile_image_url_https");
             return user;
         }
 
-        public String getName() {
+      /*  public String getName() {
             return name;
         }
 
@@ -26,7 +26,7 @@ import org.json.JSONObject;
         }
 
         public String getPublicImageUrl() {
-            return publicImageUrl;
-        }
+            return profileImageUrl;
+        } */
     }
 
