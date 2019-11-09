@@ -48,17 +48,5 @@ import java.util.List;
             }
             return users;
     }
-
-      /*  public String getName() {
-            return name;
-        }
-
-        public String getScreenName() {
-            return screenName;
-        }
-
-        public String getPublicImageUrl() {
-            return profileImageUrl;
-        } */
-    }
+}
 

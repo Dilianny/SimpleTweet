@@ -106,10 +106,6 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
             tvRelativeTime.setText(getRelativeTimeAgo(tweet.createdAt));
             tvUserName.setText("@" +tweet.user.name);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
-            //tvScreenName.setText((tweet.getUser().getScreenName()));
-          //  tvName.setText("@"+(tweet.getUser().getName()));
-            //Glide.with(context).load(tweet.getUser().getPublicImageUrl()).into(ivProfileImage);
-            //tvDate.setText(tweet.getFormattedTimestamp());
             //tweetLayout.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT));
 
         }
